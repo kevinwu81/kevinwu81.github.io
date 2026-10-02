@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Wu | Finance Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background-color: #f5f7fa;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #0b1f3a;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #8db8e8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0b1f3a, #163d68);
+            color: white;
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        /* Headshot */
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #c9dcf2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: white;
+            color: #0b1f3a;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #dfeaf5;
+        }
+
+        /* General Sections */
+        section {
+            padding: 80px 10%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #0b1f3a;
+        }
+
+        .section-content {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* About */
+        .about-text {
+            font-size: 17px;
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        /* Education */
+        .education-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .education-card h3 {
+            color: #0b1f3a;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            margin-bottom: 8px;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .skill {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+            font-weight: bold;
+        }
+
+        /* Projects */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #0b1f3a;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            color: #164f88;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Experience */
+        .experience-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .experience-card h3 {
+            color: #0b1f3a;
+            margin-bottom: 5px;
+        }
+
+        .experience-card h4 {
+            color: #555;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            text-decoration: none;
+            background-color: #0b1f3a;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 5px;
+        }
+
+        .contact-links a:hover {
+            background-color: #163d68;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b1f3a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Kevin Wu</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <!-- Headshot -->
+            <img
+                src="headshot.jpg"
+                alt="Kevin Wu"
+                class="profile-photo"
+            >
+
+            <h1>Kevin Wu</h1>
+
+            <h2>Finance Student | Future Banking Professional</h2>
+
+            <p>
+                Rutgers University finance student interested in banking,
+                financial analysis, business strategy, and investment banking.
+                I am focused on developing strong analytical, communication,
+                and problem-solving skills while gaining real-world experience.
+            </p>
+
+            <a href="#contact" class="button">Get In Touch</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <div class="section-content">
+
+            <p class="about-text">
+                I am a finance student at Rutgers University with an interest
+                in banking, financial analysis, and investment banking. My
+                experiences in business, management, and finance projects have
+                helped me develop strong communication, teamwork, leadership,
+                and problem-solving skills. I enjoy analyzing businesses,
+                understanding how companies make decisions, and finding ways
+                to create value. I am currently looking for opportunities to
+                gain hands-on experience and continue developing my career
+                in finance.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education -->
+    <section id="education">
+
+        <h2>Education</h2>
+
+        <div class="education-card">
+
+            <h3>Rutgers University</h3>
+
+            <p><strong>Bachelor of Science in Finance</strong></p>
+
+            <p>
+                New Brunswick, New Jersey
+            </p>
+
+            <p>
+                Coursework and projects focused on finance, business,
+                financial analysis, management, marketing, and economics.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2>Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                Financial Analysis
+            </div>
+
+            <div class="skill">
+                Microsoft Excel
+            </div>
+
+            <div class="skill">
+                Financial Modeling
+            </div>
+
+            <div class="skill">
+                Data Analysis
+            </div>
+
+            <div class="skill">
+                Business Strategy
+            </div>
+
+            <div class="skill">
+                Communication
+            </div>
+
+            <div class="skill">
+                Leadership
+            </div>
+
+            <div class="skill">
+                Teamwork
+            </div>
+
+            <div class="skill">
+                Problem Solving
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+
+                <h3>
+                    Goldman Sachs Internal Audit Simulation
+                </h3>
+
+                <p>
+                    Completed a Goldman Sachs internal audit job simulation
+                    through Forage. Reviewed financial information, identified
+                    potential issues, analyzed business risks, and developed
+                    recommendations based on the findings.
+                </p>
+
+                <a href="#" class="project-link">
+                    View Project
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    RU Thrive Student Marketplace
+                </h3>
+
+                <p>
+                    Developed a business concept for a Rutgers student-to-student
+                    marketplace connecting students to affordable goods and
+                    services. The project focused on convenience, trust,
+                    sustainability, and creating opportunities for students
+                    to earn income.
+                </p>
+
+                <a href="#" class="project-link">
+                    View Project
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Stock Analysis
+                </h3>
+
+                <p>
+                    Conducted company research and financial analysis to
+                    evaluate business performance, industry trends, financial
+                    information, and potential investment opportunities.
+                </p>
+
+                <a href="#" class="project-link">
+                    View Project
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Experience -->
+    <section id="experience">
+
+        <h2>Experience</h2>
+
+        <div class="section-content">
+
+            <div class="experience-card">
+
+                <h3>
+                    Assistant Manager — Taste of China
+                </h3>
+
+                <h4>
+                    Restaurant Management
+                </h4>
+
+                <p>
+                    Progressed from an entry-level restaurant position into
+                    assistant management. Gained experience in customer
+                    service, team coordination, daily operations, inventory,
+                    problem-solving, and business decision-making.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <h3>
+                    Finance Experience
+                </h3>
+
+                <h4>
+                    Financial Analysis & Business Projects
+                </h4>
+
+                <p>
+                    Developed finance experience through university coursework,
+                    financial simulations, business projects, and company
+                    analysis. Applied financial concepts to evaluate businesses,
+                    analyze performance, and understand investment opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2>Contact</h2>
+
+        <div class="contact">
+
+            <p>
+                I am always open to connecting with professionals,
+                recruiters, and other students interested in finance and
+                business.
+            </p>
+
+            <div class="contact-links">
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                >
+                    LinkedIn
+                </a>
+
+                <a
+                    href="https://github.com/"
+                    target="_blank"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="mailto:your.email@example.com"
+                >
+                    Email Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Kevin Wu. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
