@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Name | Finance Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #111827;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+            background: linear-gradient(135deg, #111827, #1e3a5f);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: normal;
+            color: #93c5fd;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #d1d5db;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .button:hover {
+            opacity: 0.8;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        /* About */
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .skill {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            font-weight: bold;
+        }
+
+        /* Projects */
+        #projects {
+            background: #e9eef5;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .project h3 {
+            margin-bottom: 10px;
+            color: #1e3a5f;
+        }
+
+        .project p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .project a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Experience */
+        .experience {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .job {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #2563eb;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        }
+
+        .job h3 {
+            color: #1e3a5f;
+        }
+
+        .job span {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Contact */
+        #contact {
+            text-align: center;
+            background: #111827;
+            color: white;
+        }
+
+        #contact p {
+            margin-bottom: 20px;
+            color: #d1d5db;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0b1120;
+            color: #9ca3af;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 60px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Your Name</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div>
+            <h1>Your Name</h1>
+
+            <h2>Finance Student | Future Banking Professional</h2>
+
+            <p>
+                Finance student interested in investment banking, financial
+                analysis, and business strategy. I enjoy using data and
+                problem-solving to understand businesses and make better decisions.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="button primary">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="button secondary">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about">
+
+            <p>
+                I am a finance student at Rutgers University with an interest
+                in banking and financial analysis. Through my coursework,
+                projects, and professional experiences, I am developing skills
+                in financial analysis, business strategy, communication, and
+                problem-solving.
+            </p>
+
+            <br>
+
+            <p>
+                I am currently looking for opportunities where I can apply my
+                skills, learn from experienced professionals, and gain
+                real-world experience in the financial industry.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill">Financial Analysis</div>
+            <div class="skill">Microsoft Excel</div>
+            <div class="skill">Financial Modeling</div>
+            <div class="skill">Data Analysis</div>
+            <div class="skill">Business Strategy</div>
+            <div class="skill">Communication</div>
+            <div class="skill">Teamwork</div>
+            <div class="skill">Problem Solving</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>Goldman Sachs Internal Audit Simulation</h3>
+
+                <p>
+                    Completed a financial industry job simulation through
+                    Forage focused on internal audit, financial analysis,
+                    and identifying potential business risks.
+                </p>
+
+                <a href="#" target="_blank">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>RU Thrive Student Marketplace</h3>
+
+                <p>
+                    Developed a student-to-student marketplace concept
+                    connecting Rutgers students through the exchange of
+                    goods and services.
+                </p>
+
+                <a href="#" target="_blank">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Stock Analysis</h3>
+
+                <p>
+                    Conducted company research and analyzed financial
+                    performance, business strategy, and market trends
+                    to develop an investment thesis.
+                </p>
+
+                <a href="#" target="_blank">
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Experience -->
+    <section id="experience">
+
+        <h2 class="section-title">Experience</h2>
+
+        <div class="experience">
+
+            <div class="job">
+
+                <h3>Assistant Manager</h3>
+
+                <span>Taste of China | 20XX – Present</span>
+
+                <p>
+                    Progressed from entry-level restaurant responsibilities
+                    into an assistant management role. Developed experience
+                    in customer service, team coordination, operations,
+                    and business decision-making.
+                </p>
+
+            </div>
+
+
+            <div class="job">
+
+                <h3>Finance Intern</h3>
+
+                <span>Company Name | 20XX – 20XX</span>
+
+                <p>
+                    Supported financial analysis, reporting, budgeting,
+                    and other business-related tasks while developing
+                    practical finance skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2 class="section-title">Let's Connect</h2>
+
+        <p>
+            I am always interested in connecting with other students,
+            professionals, and potential employers.
+        </p>
+
+        <a
+            href="https://www.linkedin.com/"
+            class="button primary"
+            target="_blank">
+            LinkedIn
+        </a>
+
+        <a
+            href="https://github.com/"
+            class="button secondary"
+            target="_blank">
+            GitHub
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>© 2026 Your Name. All Rights Reserved.</p>
+
+    </footer>
+
+</body>
+</html>
